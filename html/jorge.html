@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Color Catcher</title>
+  <link rel="stylesheet" href="/css/jorge.css" />
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Homemade+Apple&family=Instrument+Serif:ital@0;1&family=Miss+Fajardose&family=Pinyon+Script&family=Pirata+One&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <h1>Color<i>Catcher</i></h1>
+    <div class="note">Toca cada recuadro para hacer una<br>foto distinta, happy b-day bby boy!<br>₊˚₊‧˚₊‧˚₊‧˚₊‧˚₊‧ ꒰ა ☆ ໒꒱ ‧₊˚‧₊˚‧₊˚‧₊˚‧₊˚‧₊
+    </div>
+  </header>
+
+  <main class="layout">
+    <div class="grid" id="grid">
+      <template id="cell-template">
+        <div class="cell">
+          <div class="initial">
+            <button class="btn start">📸</button>
+          </div>
+          <div class="preview" style="display:none">
+            <video autoplay playsinline muted></video>
+            <button class="btn capture">Capturar</button>
+          </div>
+          <div class="result" style="display:none">
+            <img />
+            <button class="delete">✖</button>
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <canvas id="snapCanvas" style="display:none"></canvas>
+
+    <!-- Botón de descarga del collage -->
+    <div class="collage-btn-container">
+      <button id="downloadCollageBtn" class="btn disabled" disabled>¡Listo!</button>
+    </div>
+  </main>
+
+  <script src="/js/jorge.js"></script>
+</body>
+</html>
