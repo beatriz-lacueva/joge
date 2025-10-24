@@ -65,7 +65,7 @@
   }
   
   /* Bordes de colores por orden */
-  .cell:nth-child(2){ border-color:#DB3845; border-width:
+  .cell:nth-child(2){ border-color:#DB3845; border-width: 6px;
  } /* rojo */
   .cell:nth-child(3){ border-color:#FFBB32; border-style: solid; /* necesario para que border-image funcione */
 } /* amarillo */
