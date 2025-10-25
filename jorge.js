@@ -30,7 +30,7 @@
         previewDiv.style.display='flex';
         try{
           stream = await navigator.mediaDevices.getUserMedia({
-            video:{ facingMode:"enviroment", width:{ideal:1280}, height:{ideal:720}},
+            video:{ facingMode:{exact:"environment"}, width:{ideal:1280}, height:{ideal:720}},
             audio:false
           });
           video.srcObject = stream;
