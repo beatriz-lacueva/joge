@@ -30,7 +30,7 @@
         previewDiv.style.display='flex';
         try{
           stream = await navigator.mediaDevices.getUserMedia({
-            video:{ facingMode:{exact:"user"}, width:{ideal:1280}, height:{ideal:720}},
+            video:{ facingMode:"enviroment", width:{ideal:1280}, height:{ideal:720}},
             audio:false
           });
           video.srcObject = stream;
@@ -91,7 +91,6 @@
       // Capturar TODO el body (fondo, título, fotos, etc.)
       await html2canvas(document.body, {
         scale:2,
-        backgroundColor:null,
         useCORS:true,
         ignoreElements: (el) => el === downloadBtn
       }).then(canvas=>{
