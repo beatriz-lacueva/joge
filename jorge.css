@@ -20,7 +20,7 @@
     color: white;
   }
   body{
-    background-image: url('/img/fondo.jpg');
+    background-image: url('https://i.pinimg.com/736x/95/0d/15/950d158ab591295dfbf00eeb642a791e.jpg');;
     background-position: -12px -13px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -102,6 +102,10 @@
     background: transparent !important;
     transition: none !important;
     backdrop-filter: none !important;
+    border-radius: 0% !important;
+  }
+  .btn.start{
+    border-radius: 0% !important;
   }
   
   .btn:active{transform:scale(0.97);}
