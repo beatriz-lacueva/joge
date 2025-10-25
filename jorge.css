@@ -1,6 +1,5 @@
 :root{
     --gap: 10px;
-    --bg: #edf3ff;
     --card: #0b1220;
     --accent: #89afb6;
     --text: #e6eef6;
@@ -17,10 +16,11 @@
     height:100vh; margin:0;
     font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
     overflow: hidden;
-    color: white;
+    background-image: url('https://i.pinimg.com/736x/95/0d/15/950d158ab591295dfbf00eeb642a791e.jpg');
+    color: rgb(187, 211, 255);
   }
   body{
-    background-image: url('https://i.pinimg.com/736x/95/0d/15/950d158ab591295dfbf00eeb642a791e.jpg');;
+    background-image: url('https://i.pinimg.com/736x/95/0d/15/950d158ab591295dfbf00eeb642a791e.jpg');
     background-position: -12px -13px;
     background-repeat: no-repeat;
     background-size: cover;
