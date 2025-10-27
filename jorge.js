@@ -30,7 +30,7 @@
         previewDiv.style.display='flex';
         try{
           stream = await navigator.mediaDevices.getUserMedia({
-            video:{ facingMode:{exact:"user"}, width:{ideal:1280}, height:{ideal:720}},
+            video:{ facingMode: "enviroment", width:{ideal:1280}, height:{ideal:720}},
             audio:false
           });
           video.srcObject = stream;
@@ -45,7 +45,6 @@
         const w = video.videoWidth, h = video.videoHeight;
         CANVAS.width = w; CANVAS.height = h;
         ctx.save();
-        ctx.translate(w,0); 
         ctx.drawImage(video,0,0,w,h);
         ctx.restore();
         const dataUrl = CANVAS.toDataURL('image/png');
