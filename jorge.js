@@ -30,7 +30,7 @@
         previewDiv.style.display='flex';
         try{
           stream = await navigator.mediaDevices.getUserMedia({
-            video:{ facingMode:{exact:"environment"}, width:{ideal:1280}, height:{ideal:720}},
+            video:{ facingMode:{exact:"user"}, width:{ideal:1280}, height:{ideal:720}},
             audio:false
           });
           video.srcObject = stream;
@@ -92,10 +92,10 @@
       await html2canvas(document.body, {
         scale:2,
         useCORS:true,
-        ignoreElements: (el) => el === downloadBtn
+        ignoreElements: (el) => el === downloadBtn, body
       }).then(canvas=>{
         const link = document.createElement('a');
-        link.download = 'collage_photobooth.png';
+        link.download = 'color-catcher.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
       });
