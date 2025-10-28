@@ -1,5 +1,4 @@
 :root{
-    --gap: 10px;
     --card: #0b1220;
     --accent: #89afb6;
     --text: #e6eef6;
@@ -9,19 +8,17 @@
   *:not(.btn):not(.initial):not(.grid):not(body){
     margin: 10pt;
     max-height: 100%;
-
   }
   
   html,body{
-    height:100vh; margin:0;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+    height:100vh; 
+    margin:0; 
+    padding: 0;
     overflow: hidden;
     background-image: url(/img/fondo.jpg) url('https://i.pinimg.com/736x/95/0d/15/950d158ab591295dfbf00eeb642a791e.jpg') cover;
     color: rgb(187, 211, 255);
   }
   body{
-    background-image: url('https://i.pinimg.com/736x/95/0d/15/950d158ab591295dfbf00eeb642a791e.jpg');
-    background-position: -12px -13px;
     background-repeat: no-repeat;
     background-size: cover;
     display:flex; flex-direction:column; align-items:center; padding:18px 18px 80px 18px !important; 
@@ -29,8 +26,7 @@
   }
   header{
     width:100%; max-width:900px;
-    display:flex; align-items:center; justify-content:flex-flex-start; flex-direction: column;
-    margin-bottom:10px;
+    display:flex; align-items:center; justify-content:flex-start; flex-direction: column;
   }
   h1{
     margin-top: -12px !important;
@@ -41,7 +37,7 @@
   .fondito{
     position: absolute;
     height: 100vh;
-    width: 100%;
+    width: 110%;
     z-index: -2;
     top: 0 !important;
     border-radius: 0 !important;
@@ -51,19 +47,16 @@
   .note{font-size:12px; text-align: center; font-family: 'Courier New', Courier, monospace; margin-top: -10px !important;}
   
   .layout{
-    width:100%; max-width:900px;
-   border-radius:12px;
+   width:100%;
    align-items: center;
    margin-top: -25px !important;
   }
   .grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    
   }
   .cell{
     position:relative;
-    background:transparent;
     border-radius:10px; 
     overflow:hidden;
     display:flex; 
@@ -74,27 +67,24 @@
   }
   
   /* Bordes de colores por orden */
-  .cell:nth-child(2){ border-color:#DB3845; border-width: 6px;
- } /* rojo */
-  .cell:nth-child(3){ border-color:#FFBB32; border-style: solid; /* necesario para que border-image funcione */
-} /* amarillo */
+  .cell:nth-child(2){ border-color:#DB3845; } /* rojo */
+  .cell:nth-child(3){ border-color:#FFBB32; } /* amarillo */
   .cell:nth-child(4){ border-color:#9AC22B; } /* verde */
   .cell:nth-child(5){ border-color:#43aed2; } /* celeste */
   .cell:nth-child(6){ border-color:#6068ff; } /* azul suave */
   .cell:nth-child(7){ border-color:#FFB3C7; } /* rosa */
   
   video,img{
-    width:100%%; 
     height:100%; 
     object-fit:cover; 
     border-radius:0px;
     object-fit: cover;
     aspect-ratio: 1/1;
+    transform:scaleX(-1);
   }
   
   .btn{
     width: 100%;
-    font-weight: 100;
     height: 100%;
     font-size: 20px !important;
     background:rgba(255,255,255,0.08);

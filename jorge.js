@@ -45,8 +45,11 @@
         const w = video.videoWidth, h = video.videoHeight;
         CANVAS.width = w; CANVAS.height = h;
         ctx.save();
+          ctx.translate(w, 0);
+        ctx.scale(-1, 1);
         ctx.drawImage(video,0,0,w,h);
         ctx.restore();
+        
         const dataUrl = CANVAS.toDataURL('image/png');
         img.src = dataUrl;
   
