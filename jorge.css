@@ -1,47 +1,58 @@
 :root{
     --card: #0b1220;
-    --accent: #89afb6;
-    --text: #e6eef6;
+    --accent: #5aa7de;
+    --text: #ffffff;
     --muted: #9aa6b2;
   }
 
   *:not(.btn):not(.initial):not(.grid):not(body){
-    margin: 10pt;
+    margin: 5%;
     max-height: 100%;
   }
   
   html,body{
-    height:100vh; 
     margin:0; 
     padding: 0;
     overflow: hidden;
-    background-image: url(/img/fondo.jpg) url('https://i.pinimg.com/736x/95/0d/15/950d158ab591295dfbf00eeb642a791e.jpg') cover;
-    color: rgb(187, 211, 255);
+    color: rgb(252, 252, 255);
   }
   body{
-    background-repeat: no-repeat;
-    background-size: cover;
     display:flex; flex-direction:column; align-items:center; padding:18px 18px 80px 18px !important; 
     justify-content: start;
   }
   header{
     width:100%; max-width:900px;
     display:flex; align-items:center; justify-content:flex-start; flex-direction: column;
-  }
+    padding: 0 !important;  }
   h1{
     margin-top: -12px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     font-size: 40pt !important; 
     font-weight: 100;
     font-family: 'instrument serif', serif;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    padding: 0 !important;
   }
+  i, em{
+    margin: 0 !important;
+  }
+  
   .fondito{
     position: absolute;
+    overflow: hidden;
     height: 100vh;
-    width: 110%;
+    width: 100%;
     z-index: -2;
     top: 0 !important;
     border-radius: 0 !important;
     margin: 0 !important;
+    padding: 0 !important;
+    background-size: cover, cover; /* cover para cada fondo */
+    background-repeat: no-repeat, no-repeat; /* opcional */
+    background-position: center, center; /* opcional */
   }
 
   .note{font-size:12px; text-align: center; font-family: 'Courier New', Courier, monospace; margin-top: -10px !important;}
@@ -49,11 +60,10 @@
   .layout{
    width:100%;
    align-items: center;
-   margin-top: -25px !important;
   }
   .grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr) ;
   }
   .cell{
     position:relative;
@@ -63,7 +73,12 @@
     align-items:center; 
     justify-content:center;
     border:6px solid transparent;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 1 / 1 !important;
+  }
+  .cell img video{
+    aspect-ratio: 1/1 !important;
+    width: 100%;
+    height: 100%;
   }
   
   /* Bordes de colores por orden */
@@ -75,10 +90,8 @@
   .cell:nth-child(7){ border-color:#FFB3C7; } /* rosa */
   
   video,img{
-    height:100%; 
     object-fit:cover; 
     border-radius:0px;
-    object-fit: cover;
     aspect-ratio: 1/1;
     transform:scaleX(-1);
   }
@@ -86,13 +99,13 @@
   .btn{
     width: 100%;
     height: 100%;
-    font-size: 20px !important;
+    font-size: 16px !important;
     background:rgba(255,255,255,0.08);
     border:1px solid rgba(255,255,255,0.1);
     padding:8px 12px;
     border-radius: 40px;
     font-family: 'Courier New', Courier, monospace;
-    color:white; font-size:30px; cursor:pointer;
+    color:white; cursor:pointer;
     backdrop-filter:blur(4px);
     transition:opacity .2s, background .2s;
   }
@@ -114,11 +127,16 @@
     position:absolute; background: transparent !important; border-radius: 0;
   }
   .result .delete{
-    position:absolute; top: 0;px; right:0.1px;
-    background:rgba(0,0,0,0.6);
-    letter-spacing: 2px;
+    position:absolute; top:1px; left:0.2px;
     border:none; border-radius:50%; color:white;
     width:26px; height:26px; cursor:pointer;
+  }
+  .result{
+    transform: scaleX(-1);
+    aspect-ratio: 1/1 !important;
+  }
+  .result img{
+    object-fit: cover !important;
   }
   .initial, .preview, .result{
     width:100%; height:100%; display:flex;
@@ -126,7 +144,15 @@
   }
   .delete{
     padding-bottom: 3px;
+    align-items: center; justify-content: center; 
   }
+
+  .cell:nth-child(2) .delete { background: rgba(219, 56, 69, 0.4); }   /* rojo semitransparente */
+  .cell:nth-child(3) .delete { background: rgba(255, 187, 50, 0.4); }  /* amarillo semitransparente */
+  .cell:nth-child(4) .delete { background: rgba(154, 194, 43, 0.4); }  /* verde semitransparente */
+  .cell:nth-child(5) .delete { background: rgba(67, 174, 210, 0.4); }  /* celeste semitransparente */
+  .cell:nth-child(6) .delete { background: rgba(96, 104, 255, 0.4); }  /* azul semitransparente */
+  .cell:nth-child(7) .delete { background: rgba(255, 179, 199, 0.4); } /* rosa semitransparente */
   
   .collage-btn-container{
     display:flex; justify-content:center;
@@ -148,7 +174,6 @@
   }
   
   @media(max-width:480px){
-    .cell{min-height:120px;}
     h1{font-size:18px;}
   }
 canvas{
