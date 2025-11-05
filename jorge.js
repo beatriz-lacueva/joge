@@ -29,7 +29,7 @@
       previewDiv.style.display = 'flex';
       try {
         stream = await navigator.mediaDevices.getUserMedia({
-          video: { facingMode: { exact: 'environment' }, width: { ideal: 1280 }, height: { ideal: 720 } },
+          video: { facingMode: {exact: 'enviroment'}, width: { ideal: 1280 }, height: { ideal: 720 } },
           audio: false
         });
         video.srcObject = stream;
@@ -84,9 +84,13 @@
 
   document.getElementById('downloadCollageBtn').addEventListener('click', async () => {
   const downloadBtn = document.getElementById('downloadCollageBtn');
-  downloadBtn.style.visibility = 'hidden'; // ocultar botón para que no aparezca en la captura
+  const deleteButtons = document.querySelectorAll('.delete');
 
-  // Capturar todo el body tal cual se ve
+  // Ocultar botones delete y el botón de descarga
+  deleteButtons.forEach(btn => btn.style.visibility = 'hidden');
+  downloadBtn.style.visibility = 'hidden';
+
+  // Capturar el body
   const canvas = await html2canvas(document.body, {
     scale: 2,
     useCORS: true,
@@ -94,7 +98,9 @@
     logging: false
   });
 
-  downloadBtn.style.visibility = 'visible'; // volver a mostrar botón
+  // Restaurar visibilidad
+  deleteButtons.forEach(btn => btn.style.visibility = 'visible');
+  downloadBtn.style.visibility = 'visible';
 
   // Descargar la imagen
   const link = document.createElement('a');
